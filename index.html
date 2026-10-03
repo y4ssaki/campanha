@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111111" />
+  <title>Igor Corrêa 14 | Governador — Vote Certo. Menos conversa, mais resultado.</title>
+  <meta name="description" content="Campanha oficial de Igor Corrêa (14) para Governador. Secretário de Segurança Pública: Pedro. Vote Certo. Menos conversa, mais resultado." />
+
+  <!-- Open Graph (compartilhamento em Discord / redes) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Igor Corrêa 14 | Governador" />
+  <meta property="og:description" content="Vote Certo. Menos conversa, mais resultado. Igor Corrêa 14 — com Pedro na Segurança Pública." />
+  <meta property="og:image" content="foto_igor_bpm.png" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Configuração de tema do Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: {
+              950: '#000000',
+              900: '#0a0a0a',
+              800: '#111111',
+              700: '#1a1a1a',
+              600: '#242424',
+              500: '#333333'
+            },
+            brand: {
+              DEFAULT: '#FFCC00',
+              dark: '#EAB308',
+              soft: '#FFE066'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+            display: ['Anton', 'Impact', 'Haettenschweiler', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(255,204,0,.45), 0 25px 50px -25px rgba(255,204,0,.45)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* ====== Base ====== */
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+    /* Compensa a navbar fixa ao navegar por âncoras */
+    section[id] { scroll-margin-top: 88px; }
+
+    /* ====== Animação de revelação ao rolar ====== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1);
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .d-1 { transition-delay: .08s; }
+    .d-2 { transition-delay: .16s; }
+    .d-3 { transition-delay: .24s; }
+    .d-4 { transition-delay: .32s; }
+
+    /* ====== Faixa rolante (marquee) ====== */
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+
+    /* ====== Texto com contorno ====== */
+    .text-outline {
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255, 204, 0, .55);
+    }
+    @media (max-width: 640px) {
+      .text-outline { -webkit-text-stroke-width: 1.4px; }
+    }
+
+    /* ====== Cards ====== */
+    .card-hover {
+      transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease, background-color .35s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 204, 0, .55);
+      box-shadow: 0 25px 50px -25px rgba(255, 204, 0, .4);
+    }
+
+    /* ====== Barra de rolagem (desktop) ====== */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FFCC00; }
+
+    /* ====== Seleção de texto ====== */
+    ::selection { background: #FFCC00; color: #111111; }
+
+    /* ====== Acessibilidade: reduzir movimento ====== */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .marquee-track { animation: none; }
+      .card-hover:hover { transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-ink-800 font-sans text-white antialiased selection:bg-brand selection:text-ink-900">
+
+  <!-- ============================================================
+       BARRA DE PROGRESSO DE LEITURA
+  ============================================================ -->
+  <div id="scrollProgress" class="fixed top-0 left-0 z-[60] h-[3px] w-0 bg-gradient-to-r from-brand-dark to-brand transition-[width] duration-150"></div>
+
+  <!-- ============================================================
+       1. NAVBAR
+  ============================================================ -->
+  <header id="navbar" class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-ink-900/70 backdrop-blur-xl transition-all duration-300">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
+
+      <!-- Logotipo -->
+      <a href="#inicio" class="group flex shrink-0 items-center gap-3" aria-label="Igor Corrêa 14 — Página inicial">
+        <span class="grid h-10 w-10 place-items-center rounded-lg bg-brand font-display text-xl leading-none text-ink-900 shadow-[0_0_25px_-5px_rgba(255,204,0,.8)] transition-transform duration-300 group-hover:scale-105 lg:h-11 lg:w-11 lg:text-2xl">
+          14
+        </span>
+        <span class="leading-none">
+          <span class="block font-display text-base tracking-wide text-white lg:text-xl">IGOR CORRÊA</span>
+          <span class="mt-1 block text-[9px] font-bold uppercase tracking-[0.28em] text-brand lg:text-[10px]">Governador 14</span>
+        </span>
+      </a>
+
+      <!-- Links (desktop) -->
+      <ul class="hidden items-center gap-1 lg:flex">
+        <li><a href="#inicio"    class="nav-link rounded-md px-3 py-2 text-sm font-semibold text-white/70 transition hover:bg-white/5 hover:text-brand">Início</a></li>
+        <li><a href="#sobre"     class="nav-link rounded-md px-3 py-2 text-sm font-semibold text-white/70 transition hover:bg-white/5 hover:text-brand">Sobre</a></li>
+        <li><a href="#propostas" class="nav-link rounded-md px-3 py-2 text-sm font-semibold text-white/70 transition hover:bg-white/5 hover:text-brand">Propostas</a></li>
+        <li><a href="#seguranca" class="nav-link rounded-md px-3 py-2 text-sm font-semibold text-white/70 transition hover:bg-white/5 hover:text-brand">Segurança</a></li>
+        <li><a href="#noticias"  class="nav-link rounded-md px-3 py-2 text-sm font-semibold text-white/70 transition hover:bg-white/5 hover:text-brand">Notícias</a></li>
+        <li><a href="#facaparte" class="nav-link rounded-md px-3 py-2 text-sm font-semibold text-white/70 transition hover:bg-white/5 hover:text-brand">Faça Parte</a></li>
+      </ul>
+
+      <!-- CTA + Menu mobile -->
+      <div class="flex items-center gap-2">
+        <button type="button" data-download
+          class="hidden items-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-xs font-extrabold uppercase tracking-wider text-ink-900 transition hover:bg-brand-soft hover:shadow-[0_10px_30px_-10px_rgba(255,204,0,.8)] active:scale-95 md:inline-flex">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+          </svg>
+          Baixar Material
+        </button>
+
+        <!-- Botão hamburguer -->
+        <button id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu"
+          class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/5 text-white transition hover:border-brand/60 hover:text-brand lg:hidden">
+          <svg id="iconOpen"  class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+          <svg id="iconClose" class="hidden h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div id="mobileMenu" class="hidden border-t border-white/5 bg-ink-900/95 backdrop-blur-xl lg:hidden">
+      <ul class="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6">
+        <li><a href="#inicio"    class="mobile-link block rounded-lg px-4 py-3 text-base font-semibold text-white/80 transition hover:bg-brand/10 hover:text-brand">Início</a></li>
+        <li><a href="#sobre"     class="mobile-link block rounded-lg px-4 py-3 text-base font-semibold text-white/80 transition hover:bg-brand/10 hover:text-brand">Sobre</a></li>
+        <li><a href="#propostas" class="mobile-link block rounded-lg px-4 py-3 text-base font-semibold text-white/80 transition hover:bg-brand/10 hover:text-brand">Propostas</a></li>
+        <li><a href="#seguranca" class="mobile-link block rounded-lg px-4 py-3 text-base font-semibold text-white/80 transition hover:bg-brand/10 hover:text-brand">Segurança</a></li>
+        <li><a href="#noticias"  class="mobile-link block rounded-lg px-4 py-3 text-base font-semibold text-white/80 transition hover:bg-brand/10 hover:text-brand">Notícias</a></li>
+        <li><a href="#facaparte" class="mobile-link block rounded-lg px-4 py-3 text-base font-semibold text-white/80 transition hover:bg-brand/10 hover:text-brand">Faça Parte</a></li>
+        <li class="pt-2">
+          <button type="button" data-download
+            class="flex w-full items-center justify-center gap-2 rounded-lg bg-brand px-4 py-3.5 text-sm font-extrabold uppercase tracking-wider text-ink-900 transition hover:bg-brand-soft active:scale-[.98]">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+            </svg>
+            Baixar Material de Campanha
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       2. HERO SECTION
+  ============================================================ -->
+  <main>
+    <section id="inicio" class="relative overflow-hidden bg-ink-900 pt-28 pb-16 md:pt-36 md:pb-24">
+
+      <!-- Fundo decorativo -->
+      <div class="pointer-events-none absolute inset-0 -z-10">
+        <div class="absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-brand/20 blur-[130px]"></div>
+        <div class="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-brand/10 blur-[120px]"></div>
+        <div class="absolute inset-0 opacity-[0.05]"
+             style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:64px 64px;"></div>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
+
+          <!-- Coluna de texto -->
+          <div class="reveal">
+            <!-- Eyebrow -->
+            <span class="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-brand sm:text-xs">
+              <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-brand"></span>
+              Eleições 2026 · Coligação A Cidade em Primeiro Lugar
+            </span>
+
+            <!-- Nome -->
+            <h1 class="mt-6 font-display text-[2.75rem] leading-[0.92] tracking-tight sm:text-6xl lg:text-[5.25rem]">
+              IGOR<br />
+              <span class="text-brand">CORRÊA</span>
+            </h1>
+
+            <!-- Número + cargo -->
+            <div class="mt-4 flex flex-wrap items-end gap-x-5 gap-y-2">
+              <span class="font-display text-[5.5rem] leading-[0.8] text-brand drop-shadow-[0_0_35px_rgba(255,204,0,.35)] sm:text-[7rem] lg:text-[8rem]">14</span>
+              <span class="pb-3 text-sm font-bold uppercase tracking-[0.3em] text-white/60 sm:text-base">
+                Governador<br />
+                <span class="text-white/40">Número da mudança</span>
+              </span>
+            </div>
+
+            <!-- Slogan -->
+            <p class="mt-7 border-l-4 border-brand pl-4 text-lg font-extrabold leading-snug text-white sm:text-2xl">
+              “Vote Certo. Menos conversa, mais resultado.”
+            </p>
+
+            <!-- Secretário -->
+            <p class="mt-5 text-sm text-white/60 sm:text-base">
+              Secretário de Segurança Pública:
+              <strong class="font-bold text-white">Pedro</strong>
+              <span class="mx-2 text-brand">•</span>
+              Presença real nas ruas, ordem e resultado.
+            </p>
+
+            <!-- CTAs -->
+            <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a href="#propostas"
+                 class="group inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-4 text-sm font-extrabold uppercase tracking-wider text-ink-900 transition hover:bg-brand-soft hover:shadow-[0_18px_40px_-18px_rgba(255,204,0,.9)] active:scale-[.98]">
+                Conheça as Propostas
+                <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                </svg>
+              </a>
+
+              <button type="button" id="shareBtn"
+                class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 px-7 py-4 text-sm font-extrabold uppercase tracking-wider text-white transition hover:border-brand/60 hover:bg-brand/10 hover:text-brand active:scale-[.98]">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"/>
+                </svg>
+                Compartilhe no Discord/Redes
+              </button>
+            </div>
+
+            <!-- Mini-indicadores -->
+            <dl class="mt-12 grid max-w-lg grid-cols-3 gap-4 border-t border-white/10 pt-6">
+              <div>
+                <dt class="text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">Eixos</dt>
+                <dd class="mt-1 font-display text-2xl text-brand sm:text-3xl">04</dd>
+              </div>
+              <div>
+                <dt class="text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">Segurança</dt>
+                <dd class="mt-1 font-display text-2xl text-brand sm:text-3xl">24H</dd>
+              </div>
+              <div>
+                <dt class="text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">Secretário</dt>
+                <dd class="mt-1 font-display text-2xl text-brand sm:text-3xl">PEDRO</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Coluna da imagem -->
+          <div class="reveal d-2">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+
+              <!-- Moldura -->
+              <div class="relative overflow-hidden rounded-3xl border border-brand/25 bg-gradient-to-br from-ink-700 via-ink-800 to-ink-950 shadow-[0_40px_80px_-40px_rgba(0,0,0,.9)]">
+
+                <!-- Placeholder de fundo (aparece se a imagem não carregar) -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center">
+                  <svg class="h-14 w-14 text-brand/40" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z"/>
+                  </svg>
+                  <p class="font-display text-lg tracking-wide text-brand/70">FOTO DO CANDIDATO</p>
+                </div>
+
+                <!-- IMAGEM PRINCIPAL -->
+                <img
+                  src="foto_igor_bpm.png"
+                  alt="Igor Corrêa, candidato a Governador — número 14"
+                  loading="lazy"
+                  class="relative z-10 aspect-[4/5] w-full object-cover object-top"
+                  onerror="this.remove()" />
+              </div>
+
+              <!-- Selo flutuante: número -->
+              <div class="absolute -left-3 top-6 z-20 grid h-20 w-20 place-items-center rounded-2xl border border-brand/40 bg-ink-900/90 backdrop-blur-md sm:-left-6 sm:h-24 sm:w-24">
+                <span class="font-display text-4xl leading-none text-brand sm:text-5xl">14</span>
+              </div>
+
+              <!-- Placa de identificação -->
+              <div class="absolute -bottom-6 left-1/2 z-20 w-[88%] -translate-x-1/2 rounded-2xl border border-white/10 bg-ink-900/95 p-4 text-center backdrop-blur-md sm:p-5">
+                <p class="font-display text-xl tracking-wide text-white sm:text-2xl">IGOR CORRÊA</p>
+                <p class="mt-1 text-[10px] font-bold uppercase tracking-[0.28em] text-brand sm:text-xs">Governador · 14</p>
+                <p class="mt-2 border-t border-white/10 pt-2 text-[11px] text-white/50">
+                  Secretário de Segurança: <span class="font-semibold text-white/80">Pedro</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. FAIXA DE DESTAQUE / MANIFESTO
+    ============================================================ -->
+    <section class="relative overflow-hidden border-y border-brand/20 bg-brand">
+
+      <!-- Marquee -->
+      <div class="marquee flex select-none overflow-hidden py-3.5">
+        <div class="marquee-track">
+          <!-- Conteúdo duplicado para loop contínuo -->
+          <div class="flex shrink-0 items-center">
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">VOTE CERTO</span><span class="text-ink-900/50">★</span>
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">MENOS CONVERSA, MAIS RESULTADO</span><span class="text-ink-900/50">★</span>
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">IGOR CORRÊA 14</span><span class="text-ink-900/50">★</span>
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">PEDRO NA SEGURANÇA</span><span class="text-ink-900/50">★</span>
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">A CIDADE EM PRIMEIRO LUGAR</span><span class="text-ink-900/50">★</span>
+          </div>
+          <div class="flex shrink-0 items-center" aria-hidden="true">
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">VOTE CERTO</span><span class="text-ink-900/50">★</span>
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">MENOS CONVERSA, MAIS RESULTADO</span><span class="text-ink-900/50">★</span>
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">IGOR CORRÊA 14</span><span class="text-ink-900/50">★</span>
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">PEDRO NA SEGURANÇA</span><span class="text-ink-900/50">★</span>
+            <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">A CIDADE EM PRIMEIRO LUGAR</span><span class="text-ink-900/50">★</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manifesto -->
+      <div class="border-t border-ink-900/10 bg-ink-900">
+        <div class="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 md:py-20 lg:px-8">
+          <p class="reveal text-[10px] font-bold uppercase tracking-[0.32em] text-brand sm:text-xs">O Manifesto</p>
+
+          <h2 class="reveal d-1 mt-5 font-display text-3xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            CHEGA DE POLÍTICA DE<br class="hidden sm:block" />
+            <span class="text-brand">PROMESSA VAZIA.</span>
+          </h2>
+
+          <p class="reveal d-2 mx-auto mt-7 max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
+            Nossa campanha não é contra pessoas — é contra o jeito velho de fazer política.
+            Enquanto uns aparecem só na eleição, nós vamos trabalhar por quem levanta cedo:
+            <strong class="font-semibold text-white">o trabalhador da cidade</strong>.
+            Salário que rende, rua iluminada, atendimento rápido e segurança de verdade.
+          </p>
+
+          <div class="reveal d-3 mt-10 flex flex-wrap items-center justify-center gap-3">
+            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white/70">Trabalhador em 1º lugar</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white/70">Gestão e não discurso</span>
+            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white/70">Resultado mensurável</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. A LIDERANÇA (SOBRE)
+    ============================================================ -->
+    <section id="sobre" class="relative bg-ink-800 py-20 md:py-28">
+      <div class="pointer-events-none absolute left-1/2 top-0 -z-0 h-72 w-72 -translate-x-1/2 rounded-full bg-brand/10 blur-[120px]"></div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <!-- Cabeçalho da seção -->
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-brand sm:text-xs">A Liderança</p>
+          <h2 class="mt-4 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
+            QUEM VAI <span class="text-brand">COMANDAR</span> A CIDADE
+          </h2>
+          <p class="mt-5 text-base leading-relaxed text-white/60 sm:text-lg">
+            Uma dupla construída na prática: quem entende de gestão e quem entende de rua.
+          </p>
+        </div>
+
+        <!-- Fotos lado a lado -->
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:gap-8">
+
+          <!-- Foto Igor -->
+          <figure class="reveal d-1 group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-ink-700 to-ink-950">
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center">
+              <svg class="h-12 w-12 text-brand/40" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
+              </svg>
+              <p class="font-display text-base tracking-wide text-brand/70">FOTO — IGOR CORRÊA</p>
+            </div>
+            <img src="foto_igor_pcesp.png" alt="Igor Corrêa" loading="lazy"
+                 class="relative z-10 aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                 onerror="this.remove()" />
+            <figcaption class="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-ink-950 via-ink-950/80 to-transparent p-6 pt-16">
+              <p class="font-display text-2xl tracking-wide text-white">IGOR CORRÊA</p>
+              <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.24em] text-brand">Candidato a Governador · 14</p>
+            </figcaption>
+          </figure>
+
+          <!-- Foto Pedro (placeholder — sem foto por enquanto) -->
+          <figure class="reveal d-2 group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-ink-700 to-ink-950">
+            <div class="flex aspect-[4/5] w-full flex-col items-center justify-center gap-4 p-8 text-center">
+              <span class="grid h-20 w-20 place-items-center rounded-full border border-brand/30 bg-brand/10">
+                <svg class="h-10 w-10 text-brand/70" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
+                </svg>
+              </span>
+              <p class="font-display text-base tracking-wide text-brand/70">FOTO — PEDRO</p>
+              <p class="max-w-[16rem] text-[11px] leading-relaxed text-white/35">
+                Foto do Secretário de Segurança em breve
+              </p>
+            </div>
+            <figcaption class="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-ink-950 via-ink-950/80 to-transparent p-6 pt-16">
+              <p class="font-display text-2xl tracking-wide text-white">PEDRO</p>
+              <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.24em] text-brand">Secretário de Segurança Pública</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Biografias -->
+        <div class="mt-12 grid gap-6 lg:grid-cols-2 lg:gap-8">
+
+          <article class="reveal d-1 rounded-2xl border border-white/10 bg-ink-700/60 p-7 sm:p-8">
+            <div class="flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-brand font-display text-lg text-ink-900">14</span>
+              <h3 class="font-display text-xl tracking-wide text-white sm:text-2xl">IGOR CORRÊA</h3>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-white/65 sm:text-base">
+              Igor Corrêa construiu sua trajetória ouvindo quem trabalha: comerciantes, motoristas,
+              entregadores e famílias que precisam do básico funcionando. Ficou conhecido por resolver
+              problemas na prática — sem discurso longo, sem enrolação e sem promessa que não cabe no orçamento.
+            </p>
+            <p class="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+              Seu compromisso é com a gestão: dinheiro no bolso do morador, alvará desburocratizado,
+              cidade iluminada e serviços públicos que respondem rápido. <strong class="font-semibold text-brand">Menos conversa. Mais resultado.</strong>
+            </p>
+          </article>
+
+          <article class="reveal d-2 rounded-2xl border border-white/10 bg-ink-700/60 p-7 sm:p-8">
+            <div class="flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-lg bg-brand text-ink-900">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/>
+                </svg>
+              </span>
+              <h3 class="font-display text-xl tracking-wide text-white sm:text-2xl">PEDRO</h3>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-white/65 sm:text-base">
+              Pedro é o nome da firmeza. Assumiu a Segurança Pública com uma regra simples:
+              quem trabalha tem que andar tranquilo. Nada de gabinete fechado — ele estará
+              <strong class="font-semibold text-white">presente nas ruas</strong>, acompanhando operações e cobrando resultado das equipes.
+            </p>
+            <p class="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+              Sob seu comando: equipamento de ponta, bonificação por apreensão de armas ilegais,
+              cerco inteligente por câmeras e tolerância zero com o crime organizado.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. EIXOS DO PROJETO DE GOVERNO (PROPOSTAS)
+    ============================================================ -->
+    <section id="propostas" class="relative border-y border-white/5 bg-ink-900 py-20 md:py-28">
+      <div class="pointer-events-none absolute inset-0 opacity-[0.04]"
+           style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:56px 56px;"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-brand sm:text-xs">Projeto de Governo</p>
+          <h2 class="mt-4 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
+            OS <span class="text-brand">4 EIXOS</span> DA MUDANÇA
+          </h2>
+          <p class="mt-5 text-base leading-relaxed text-white/60 sm:text-lg">
+            Compromissos claros, mensuráveis e cobráveis. É isso que vamos entregar.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2 lg:gap-7">
+
+          <!-- Eixo 1 — Economia -->
+          <article class="card-hover reveal d-1 group flex flex-col rounded-3xl border border-white/10 bg-ink-800/80 p-7 sm:p-8">
+            <div class="flex items-start justify-between gap-4">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand/10 text-2xl ring-1 ring-brand/25 transition group-hover:bg-brand/20">💵</span>
+              <span class="font-display text-4xl leading-none text-white/10 transition group-hover:text-brand/25">01</span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">ECONOMIA &amp; BOLSO</h3>
+            <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Dinheiro no bolso de quem trabalha</p>
+
+            <ul class="mt-6 space-y-3.5 text-sm leading-relaxed text-white/70 sm:text-base">
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Aumento real do Dinheiro Inicial</strong> — criação e reforço do Fundo de Acolhimento ao novo morador.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Reajuste imediato da Renda Básica</strong> — Auxílio/Bolsa Família com valor corrigido desde o primeiro dia.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Desburocratização de alvarás</strong> — abrir e manter um comércio sem fila, sem taxa abusiva e sem enrolação.</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Eixo 2 — Segurança -->
+          <article class="card-hover reveal d-2 group flex flex-col rounded-3xl border border-brand/30 bg-gradient-to-br from-ink-800 to-ink-950 p-7 shadow-[0_0_0_1px_rgba(255,204,0,.12)] sm:p-8">
+            <div class="flex items-start justify-between gap-4">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand/15 text-2xl ring-1 ring-brand/35 transition group-hover:bg-brand/25">🛡️</span>
+              <span class="font-display text-4xl leading-none text-brand/25">02</span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">SEGURANÇA PÚBLICA &amp; ORDEM</h3>
+            <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Comando de Pedro, presença de rua</p>
+
+            <ul class="mt-6 space-y-3.5 text-sm leading-relaxed text-white/70 sm:text-base">
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Equipamento de ponta</strong> — armamento, viaturas e proteção individual de nível profissional.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Bônus por apreensão de armas ilegais</strong> — reconhecimento financeiro por produtividade real.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Cerco inteligente por câmeras</strong> — monitoramento integrado nas entradas e pontos críticos da cidade.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Presença ativa do Secretário Pedro</strong> — gestão de rua, não de gabinete.</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Eixo 3 — Saúde -->
+          <article class="card-hover reveal d-3 group flex flex-col rounded-3xl border border-white/10 bg-ink-800/80 p-7 sm:p-8">
+            <div class="flex items-start justify-between gap-4">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand/10 text-2xl ring-1 ring-brand/25 transition group-hover:bg-brand/20">🏥</span>
+              <span class="font-display text-4xl leading-none text-white/10 transition group-hover:text-brand/25">03</span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">SAÚDE &amp; PRONTIDÃO (EMS)</h3>
+            <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Salvar vidas com resposta rápida</p>
+
+            <ul class="mt-6 space-y-3.5 text-sm leading-relaxed text-white/70 sm:text-base">
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Plano de carreira por produtividade</strong> — socorrista que atende mais e melhor, evolui mais rápido.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Kits de emergência acessíveis</strong> — insumos disponíveis para a população e para as equipes.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Redução no tempo de resposta</strong> — meta clara de atendimento a cada chamado.</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Eixo 4 — Cidade -->
+          <article class="card-hover reveal d-4 group flex flex-col rounded-3xl border border-white/10 bg-ink-800/80 p-7 sm:p-8">
+            <div class="flex items-start justify-between gap-4">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand/10 text-2xl ring-1 ring-brand/25 transition group-hover:bg-brand/20">🏎️</span>
+              <span class="font-display text-4xl leading-none text-white/10 transition group-hover:text-brand/25">04</span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">CIDADE ATIVA &amp; LAZER</h3>
+            <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Vida na cidade, não só movimento</p>
+
+            <ul class="mt-6 space-y-3.5 text-sm leading-relaxed text-white/70 sm:text-base">
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Incentivo a eventos públicos</strong> — apoio oficial a encontros, feiras e ações da comunidade.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Corridas legalizadas e competições</strong> — estrutura, segurança e regulamento para o automobilismo da cidade.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
+                <span><strong class="font-semibold text-white">Reforma de asfalto e iluminação</strong> — ruas trafegáveis, postes funcionando e cidade visível à noite.</span>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. SEGURANÇA (DESTAQUE — PEDRO)
+    ============================================================ -->
+    <section id="seguranca" class="relative overflow-hidden bg-ink-800 py-20 md:py-28">
+      <div class="pointer-events-none absolute -right-40 top-1/4 h-96 w-96 rounded-full bg-brand/10 blur-[140px]"></div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+
+          <!-- Texto -->
+          <div class="reveal">
+            <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-brand sm:text-xs">Segurança Pública</p>
+            <h2 class="mt-4 font-display text-3xl leading-[1.05] tracking-tight sm:text-5xl">
+              ORDEM SE<br /><span class="text-brand">CONSTRÓI NA RUA.</span>
+            </h2>
+            <p class="mt-6 text-base leading-relaxed text-white/70 sm:text-lg">
+              Com <strong class="font-semibold text-white">Pedro</strong> na Secretaria de Segurança Pública,
+              a política de segurança deixa de ser estatística e passa a ser presença. Meta clara,
+              equipe valorizada e resposta rápida contra o crime organizado.
+            </p>
+
+            <blockquote class="mt-8 border-l-4 border-brand bg-white/5 py-4 pl-5 pr-4 text-base font-semibold italic leading-relaxed text-white sm:text-lg">
+              “Quem trabalha tem o direito de andar tranquilo. Minha função é garantir isso — todos os dias.”
+              <footer class="mt-3 text-xs font-bold uppercase not-italic tracking-[0.2em] text-brand">— Pedro, Secretário de Segurança Pública</footer>
+            </blockquote>
+          </div>
+
+          <!-- Compromissos -->
+          <div class="grid gap-4 sm:grid-cols-2">
+
+            <div class="card-hover reveal d-1 rounded-2xl border border-white/10 bg-ink-900/70 p-6">
+              <p class="font-display text-3xl text-brand">+1</p>
+              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Equipamento de ponta</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/55">Investimento direto em armamento, viaturas e proteção.</p>
+            </div>
+
+            <div class="card-hover reveal d-2 rounded-2xl border border-white/10 bg-ink-900/70 p-6">
+              <p class="font-display text-3xl text-brand">$</p>
+              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Bônus por apreensão</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/55">Gratificação real por arma ilegal retirada de circulação.</p>
+            </div>
+
+            <div class="card-hover reveal d-3 rounded-2xl border border-white/10 bg-ink-900/70 p-6">
+              <p class="font-display text-3xl text-brand">24h</p>
+              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Cerco por câmeras</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/55">Monitoramento inteligente nas entradas e pontos críticos.</p>
+            </div>
+
+            <div class="card-hover reveal d-4 rounded-2xl border border-brand/30 bg-brand/10 p-6">
+              <p class="font-display text-3xl text-brand">RUA</p>
+              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Gestão presente</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/60">O Secretário Pedro acompanhando operações de perto.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. NOTÍCIAS
+    ============================================================ -->
+    <section id="noticias" class="border-y border-white/5 bg-ink-900 py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="reveal flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-brand sm:text-xs">Notícias</p>
+            <h2 class="mt-4 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
+              DIRETO DA <span class="text-brand">CAMPANHA</span>
+            </h2>
+          </div>
+          <p class="max-w-md text-sm leading-relaxed text-white/55 sm:text-base">
+            Acompanhe as ações, visitas e anúncios oficiais da coligação.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+
+          <!-- Notícia 1 — usa a 3ª foto (foto_igor_favela) -->
+          <article class="card-hover reveal d-1 group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800/80">
+            <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-ink-700 to-ink-950">
+              <img src="foto_igor_favela.png" alt="Igor Corrêa em visita à comunidade" loading="lazy"
+                   class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                   onerror="this.remove()" />
+              <span class="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-ink-900">Economia</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <time class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40">Campanha 2026</time>
+              <h3 class="mt-3 font-display text-xl leading-snug tracking-wide text-white">DINHEIRO INICIAL MAIS ALTO PARA O NOVO MORADOR</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-white/60">
+                O Fundo de Acolhimento garante que quem chega à cidade comece com estrutura para trabalhar e crescer.
+              </p>
+              <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand">
+                Ler mais
+                <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- Notícia 2 — placeholder -->
+          <article class="card-hover reveal d-2 group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800/80">
+            <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-ink-700 to-ink-950">
+              <img src="INSIRA_AQUI_IMAGEM_NOTICIA_2.png" alt="Notícia 2" loading="lazy"
+                   class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                   onerror="this.remove()" />
+              <span class="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-ink-900">Segurança</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <time class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40">Campanha 2026</time>
+              <h3 class="mt-3 font-display text-xl leading-snug tracking-wide text-white">PEDRO ANUNCIA CERCO INTELIGENTE POR CÂMERAS</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-white/60">
+                Novo sistema cobre entradas da cidade e pontos críticos, com resposta imediata das equipes.
+              </p>
+              <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand">
+                Ler mais
+                <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- Notícia 3 — placeholder -->
+          <article class="card-hover reveal d-3 group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800/80">
+            <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-ink-700 to-ink-950">
+              <img src="INSIRA_AQUI_IMAGEM_NOTICIA_3.png" alt="Notícia 3" loading="lazy"
+                   class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                   onerror="this.remove()" />
+              <span class="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-ink-900">Cidade</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <time class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40">Campanha 2026</time>
+              <h3 class="mt-3 font-display text-xl leading-snug tracking-wide text-white">CORRIDAS LEGALIZADAS E REFORMA NO ASFALTO</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-white/60">
+                Plano prevê pistas regulamentadas, eventos oficiais e recuperação da iluminação pública.
+              </p>
+              <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand">
+                Ler mais
+                <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. FAÇA PARTE
+    ============================================================ -->
+    <section id="facaparte" class="relative overflow-hidden bg-brand py-20 md:py-24">
+      <div class="pointer-events-none absolute inset-0 opacity-[0.07]"
+           style="background-image:linear-gradient(#000 1px,transparent 1px),linear-gradient(90deg,#000 1px,transparent 1px);background-size:48px 48px;"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+          <!-- Texto -->
+          <div class="reveal text-ink-900">
+            <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-ink-900/60 sm:text-xs">Faça Parte</p>
+            <h2 class="mt-4 font-display text-4xl leading-[0.95] tracking-tight sm:text-6xl">
+              A MUDANÇA<br />PRECISA DE VOCÊ.
+            </h2>
+            <p class="mt-6 max-w-lg text-base font-medium leading-relaxed text-ink-900/80 sm:text-lg">
+              Entre para a equipe de campanha, ajude a divulgar nas comunidades e no Discord.
+              Junte-se a quem quer uma cidade que funciona de verdade.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <span class="rounded-full border border-ink-900/20 bg-ink-900/5 px-4 py-2 text-xs font-bold uppercase tracking-wider text-ink-900">Divulgação</span>
+              <span class="rounded-full border border-ink-900/20 bg-ink-900/5 px-4 py-2 text-xs font-bold uppercase tracking-wider text-ink-900">Eventos</span>
+              <span class="rounded-full border border-ink-900/20 bg-ink-900/5 px-4 py-2 text-xs font-bold uppercase tracking-wider text-ink-900">Comunidade</span>
+            </div>
+          </div>
+
+          <!-- Formulário -->
+          <div class="reveal d-2">
+            <form id="joinForm" novalidate
+                  class="rounded-3xl border border-ink-900/10 bg-ink-900 p-7 shadow-2xl sm:p-9">
+
+              <h3 class="font-display text-2xl tracking-wide text-white">QUERO AJUDAR</h3>
+              <p class="mt-2 text-sm text-white/50">Preencha e nossa equipe entra em contato.</p>
+
+              <div class="mt-7 space-y-5">
+                <div>
+                  <label for="nome" class="mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">Nome no RP</label>
+                  <input id="nome" name="nome" type="text" required placeholder="Ex.: João Silva"
+                         class="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-brand focus:bg-white/10 focus:ring-2 focus:ring-brand/30" />
+                </div>
+
+                <div>
+                  <label for="discord" class="mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">Usuário do Discord</label>
+                  <input id="discord" name="discord" type="text" required placeholder="Ex.: usuario#0000"
+                         class="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-brand focus:bg-white/10 focus:ring-2 focus:ring-brand/30" />
+                </div>
+
+                <div>
+                  <label for="ajuda" class="mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">Como quer ajudar?</label>
+                  <select id="ajuda" name="ajuda"
+                          class="w-full appearance-none rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-brand focus:bg-white/10 focus:ring-2 focus:ring-brand/30">
+                    <option class="bg-ink-800">Divulgação em comunidades</option>
+                    <option class="bg-ink-800">Organização de eventos</option>
+                    <option class="bg-ink-800">Apoio na segurança / ordem</option>
+                    <option class="bg-ink-800">Apoio no EMS / saúde</option>
+                    <option class="bg-ink-800">Outro</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit"
+                class="mt-7 flex w-full items-center justify-center gap-2 rounded-lg bg-brand px-6 py-4 text-sm font-extrabold uppercase tracking-wider text-ink-900 transition hover:bg-brand-soft hover:shadow-[0_18px_40px_-18px_rgba(255,204,0,.9)] active:scale-[.98]">
+                Quero fazer parte
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </button>
+
+              <p class="mt-4 text-center text-[11px] leading-relaxed text-white/35">
+                Página fictícia de Roleplay. Nenhum dado real é coletado ou armazenado.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       9. RODAPÉ INSTITUCIONAL
+  ============================================================ -->
+  <footer class="border-t border-white/10 bg-ink-950">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+
+      <div class="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
+
+        <!-- Marca -->
+        <div>
+          <a href="#inicio" class="flex items-center gap-3">
+            <span class="grid h-12 w-12 place-items-center rounded-lg bg-brand font-display text-2xl leading-none text-ink-900">14</span>
+            <span class="leading-none">
+              <span class="block font-display text-xl tracking-wide text-white">IGOR CORRÊA</span>
+              <span class="mt-1 block text-[10px] font-bold uppercase tracking-[0.28em] text-brand">Governador · 14</span>
+            </span>
+          </a>
+
+          <p class="mt-6 max-w-sm text-sm leading-relaxed text-white/50">
+            Coligação <strong class="font-semibold text-white/80">A Cidade em Primeiro Lugar</strong>.
+            Vote Certo. Menos conversa, mais resultado.
+          </p>
+
+          <p class="mt-5 text-xs leading-relaxed text-white/35">
+            CNPJ da Coligação: <span class="font-mono text-white/50">00.000.000/0001-14</span><br />
+            Eleições 2026 · Campanha de Roleplay (RP)
+          </p>
+        </div>
+
+        <!-- Navegação -->
+        <nav aria-label="Links do rodapé">
+          <h3 class="text-[11px] font-bold uppercase tracking-[0.24em] text-brand">Navegação</h3>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li><a href="#inicio"    class="text-white/55 transition hover:text-brand">Início</a></li>
+            <li><a href="#sobre"     class="text-white/55 transition hover:text-brand">Sobre</a></li>
+            <li><a href="#propostas" class="text-white/55 transition hover:text-brand">Propostas</a></li>
+            <li><a href="#seguranca" class="text-white/55 transition hover:text-brand">Segurança</a></li>
+            <li><a href="#noticias"  class="text-white/55 transition hover:text-brand">Notícias</a></li>
+            <li><a href="#facaparte" class="text-white/55 transition hover:text-brand">Faça Parte</a></li>
+          </ul>
+        </nav>
+
+        <!-- Comunidade -->
+        <div>
+          <h3 class="text-[11px] font-bold uppercase tracking-[0.24em] text-brand">Comunidade</h3>
+
+          <div class="mt-5 flex flex-wrap gap-3">
+            <!-- Discord -->
+            <a href="#" aria-label="Discord da campanha"
+               class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-brand/60 hover:bg-brand/10 hover:text-brand">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.6 12.6 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.891.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03ZM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.418 0 1.334-.956 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.418 0 1.334-.947 2.419-2.157 2.419Z"/>
+              </svg>
+            </a>
+
+            <!-- X / Twitter -->
+            <a href="#" aria-label="X (Twitter) da campanha"
+               class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-brand/60 hover:bg-brand/10 hover:text-brand">
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644Z"/>
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href="#" aria-label="Instagram da campanha"
+               class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-brand/60 hover:bg-brand/10 hover:text-brand">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.415.56.218.96.478 1.38.898.42.42.68.82.898 1.38.166.422.361 1.057.415 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.415 2.227a3.71 3.71 0 0 1-.898 1.38c-.42.42-.82.68-1.38.898-.422.166-1.057.361-2.227.415-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.415a3.71 3.71 0 0 1-1.38-.898 3.71 3.71 0 0 1-.898-1.38c-.166-.422-.361-1.057-.415-2.227C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.249-1.805.415-2.227.218-.56.478-.96.898-1.38.42-.42.82-.68 1.38-.898.422-.166 1.057-.361 2.227-.415C8.416 2.175 8.796 2.163 12 2.163Zm0 1.802c-3.148 0-3.52.012-4.762.069-1.15.052-1.774.244-2.189.406-.55.214-.943.469-1.354.88-.411.411-.666.804-.88 1.354-.162.415-.354 1.039-.406 2.189-.057 1.242-.069 1.614-.069 4.762s.012 3.52.069 4.762c.052 1.15.244 1.774.406 2.189.214.55.469.943.88 1.354.411.411.804.666 1.354.88.415.162 1.039.354 2.189.406 1.242.057 1.614.069 4.762.069s3.52-.012 4.762-.069c1.15-.052 1.774-.244 2.189-.406.55-.214.943-.469 1.354-.88.411-.411.666-.804.88-1.354.162-.415.354-1.039.406-2.189.057-1.242.069-1.614.069-4.762s-.012-3.52-.069-4.762c-.052-1.15-.244-1.774-.406-2.189a3.62 3.62 0 0 0-.88-1.354 3.62 3.62 0 0 0-1.354-.88c-.415-.162-1.039-.354-2.189-.406-1.242-.057-1.614-.069-4.762-.069Zm0 3.064a5.135 5.135 0 1 1 0 10.27 5.135 5.135 0 0 1 0-10.27Zm0 8.468a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667Zm6.538-8.671a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/>
+              </svg>
+            </a>
+
+            <!-- TikTok -->
+            <a href="#" aria-label="TikTok da campanha"
+               class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-brand/60 hover:bg-brand/10 hover:text-brand">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-1.83-2.48V9.77a5.68 5.68 0 1 0 4.92 5.63V8.87a7.35 7.35 0 0 0 4.3 1.38V7.16a4.28 4.28 0 0 1-3.24-1.34Z"/>
+              </svg>
+            </a>
+          </div>
+
+          <button type="button" data-download
+            class="mt-6 inline-flex items-center gap-2 rounded-lg border border-brand/40 bg-brand/10 px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-brand transition hover:bg-brand hover:text-ink-900 active:scale-[.98]">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+            </svg>
+            Baixar Material
+          </button>
+        </div>
+      </div>
+
+      <!-- Menção legal -->
+      <div class="mt-14 border-t border-white/10 pt-8">
+        <p class="text-[11px] leading-relaxed text-white/35">
+          <strong class="font-semibold text-white/50">Menção legal:</strong>
+          Esta é uma página fictícia criada exclusivamente para fins de Roleplay (RP) em comunidades de jogos.
+          Não representa partido político, candidato real, órgão público ou eleição oficial.
+          “Igor Corrêa”, “Pedro” e a coligação “A Cidade em Primeiro Lugar” são personagens e entidades fictícias.
+          Nenhuma informação pessoal real é coletada. Eleições 2026 · Conteúdo de entretenimento.
+        </p>
+
+        <div class="mt-6 flex flex-col items-start justify-between gap-3 text-[11px] text-white/35 sm:flex-row sm:items-center">
+          <p>© <span id="anoAtual">2026</span> Coligação A Cidade em Primeiro Lugar — Igor Corrêa 14. Todos os direitos reservados.</p>
+          <p class="font-semibold uppercase tracking-[0.2em] text-brand/70">Vote Certo. Menos conversa, mais resultado.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BOTÃO VOLTAR AO TOPO
+  ============================================================ -->
+  <button id="toTop" type="button" aria-label="Voltar ao topo"
+    class="fixed bottom-6 right-5 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full border border-brand/40 bg-ink-900/90 text-brand opacity-0 backdrop-blur-md transition-all duration-300 hover:bg-brand hover:text-ink-900 pointer-events-none">
+    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75 12 8.25l7.5 7.5"/>
+    </svg>
+  </button>
+
+  <!-- ============================================================
+       TOAST (avisos)
+  ============================================================ -->
+  <div id="toast" role="status" aria-live="polite"
+    class="pointer-events-none fixed bottom-6 left-1/2 z-[70] w-[92%] max-w-sm -translate-x-1/2 translate-y-6 rounded-xl border border-brand/40 bg-ink-900/95 px-5 py-4 text-sm font-semibold text-white opacity-0 shadow-2xl backdrop-blur-md transition-all duration-300">
+    <span id="toastMsg">Mensagem</span>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT — microinterações
+  ============================================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* 1) MENU MOBILE */
+      const menuBtn   = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const iconOpen  = document.getElementById('iconOpen');
+      const iconClose = document.getElementById('iconClose');
+
+      function setMenu(open) {
+        mobileMenu.classList.toggle('hidden', !open);
+        iconOpen.classList.toggle('hidden', open);
+        iconClose.classList.toggle('hidden', !open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+
+      menuBtn.addEventListener('click', function () {
+        setMenu(mobileMenu.classList.contains('hidden'));
+      });
+
+      document.querySelectorAll('.mobile-link').forEach(function (link) {
+        link.addEventListener('click', function () { setMenu(false); });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) setMenu(false);
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) setMenu(false);
+      });
+
+      /* 2) NAVBAR + PROGRESSO + TOPO */
+      const navbar    = document.getElementById('navbar');
+      const progress  = document.getElementById('scrollProgress');
+      const toTop     = document.getElementById('toTop');
+
+      function onScroll() {
+        const y = window.scrollY || document.documentElement.scrollTop;
+
+        if (y > 40) {
+          navbar.classList.add('bg-ink-900/95', 'shadow-[0_10px_40px_-20px_rgba(0,0,0,.9)]');
+          navbar.classList.remove('bg-ink-900/70');
+        } else {
+          navbar.classList.remove('bg-ink-900/95', 'shadow-[0_10px_40px_-20px_rgba(0,0,0,.9)]');
+          navbar.classList.add('bg-ink-900/70');
+        }
+
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (y / docHeight) * 100 : 0;
+        progress.style.width = pct + '%';
+
+        const visible = y > 600;
+        toTop.classList.toggle('opacity-0', !visible);
+        toTop.classList.toggle('translate-y-4', !visible);
+        toTop.classList.toggle('pointer-events-none', !visible);
+        toTop.classList.toggle('opacity-100', visible);
+        toTop.classList.toggle('translate-y-0', visible);
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* 3) SCROLL SUAVE */
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          const id = this.getAttribute('href');
+          if (!id || id === '#') return;
+          const target = document.querySelector(id);
+          if (!target) return;
+
+          e.preventDefault();
+          const offset = window.innerWidth >= 1024 ? 80 : 64;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+          if (history.replaceState) history.replaceState(null, '', id);
+        });
+      });
+
+      /* 4) REVELAÇÃO AO ROLAR */
+      const revealEls = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        revealEls.forEach(function (el) { observer.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* 5) TOAST */
+      const toast    = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      let toastTimer = null;
+
+      function showToast(message) {
+        toastMsg.textContent = message;
+        toast.classList.remove('opacity-0', 'translate-y-6');
+        toast.classList.add('opacity-100', 'translate-y-0');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.add('opacity-0', 'translate-y-6');
+          toast.classList.remove('opacity-100', 'translate-y-0');
+        }, 3200);
+      }
+
+      /* 6) BAIXAR MATERIAL */
+      const MATERIAL_URL = ''; // Ex.: 'material-de-campanha.pdf'
+
+      document.querySelectorAll('[data-download]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setMenu(false);
+          if (MATERIAL_URL) {
+            const a = document.createElement('a');
+            a.href = MATERIAL_URL;
+            a.download = 'material-de-campanha-igor-correa-14.pdf';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+          } else {
+            showToast('📦 Material de campanha disponível em breve!');
+          }
+        });
+      });
+
+      /* 7) COMPARTILHAR */
+      const shareBtn = document.getElementById('shareBtn');
+
+      shareBtn.addEventListener('click', async function () {
+        const texto = 'Vote Certo. Menos conversa, mais resultado. Igor Corrêa 14 para Governador — com Pedro na Segurança Pública. 🗳️';
+        const url   = window.location.href;
+
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: 'Igor Corrêa 14 — Governador', text: texto, url: url });
+            return;
+          } catch (err) {
+            if (err && err.name === 'AbortError') return;
+          }
+        }
+
+        const conteudo = texto + '\n' + url;
+        try {
+          await navigator.clipboard.writeText(conteudo);
+          showToast('✅ Link copiado! Cole no Discord ou nas redes.');
+        } catch (err) {
+          window.prompt('Copie o link da campanha:', url);
+        }
+      });
+
+      /* 8) FORMULÁRIO */
+      const joinForm = document.getElementById('joinForm');
+
+      joinForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const nome    = document.getElementById('nome');
+        const discord = document.getElementById('discord');
+
+        if (!nome.value.trim() || !discord.value.trim()) {
+          showToast('⚠️ Preencha seu nome e o usuário do Discord.');
+          (!nome.value.trim() ? nome : discord).focus();
+          return;
+        }
+
+        showToast('🎉 Valeu, ' + nome.value.trim().split(' ')[0] + '! Bem-vindo à equipe 14.');
+        joinForm.reset();
+      });
+
+      /* 9) ANO ATUAL */
+      document.getElementById('anoAtual').textContent = new Date().getFullYear();
+
+    })();
+  </script>
+</body>
+</html>
