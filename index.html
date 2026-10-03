@@ -345,7 +345,6 @@
       <!-- Marquee -->
       <div class="marquee flex select-none overflow-hidden py-3.5">
         <div class="marquee-track">
-          <!-- Conteúdo duplicado para loop contínuo -->
           <div class="flex shrink-0 items-center">
             <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">VOTE CERTO</span><span class="text-ink-900/50">★</span>
             <span class="whitespace-nowrap px-6 font-display text-lg tracking-wider text-ink-900 sm:text-xl">MENOS CONVERSA, MAIS RESULTADO</span><span class="text-ink-900/50">★</span>
@@ -369,15 +368,15 @@
           <p class="reveal text-[10px] font-bold uppercase tracking-[0.32em] text-brand sm:text-xs">O Manifesto</p>
 
           <h2 class="reveal d-1 mt-5 font-display text-3xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            CHEGA DE POLÍTICA DE<br class="hidden sm:block" />
-            <span class="text-brand">PROMESSA VAZIA.</span>
+            A CIDADE <span class="text-brand">REAL</span><br class="hidden sm:block" />
+            NÃO ESPERA.
           </h2>
 
           <p class="reveal d-2 mx-auto mt-7 max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
-            Nossa campanha não é contra pessoas — é contra o jeito velho de fazer política.
-            Enquanto uns aparecem só na eleição, nós vamos trabalhar por quem levanta cedo:
-            <strong class="font-semibold text-white">o trabalhador da cidade</strong>.
-            Salário que rende, rua iluminada, atendimento rápido e segurança de verdade.
+            Enquanto os políticos tradicionais ficam trancados em gabinetes, nós governamos para a
+            <strong class="font-semibold text-white">cidade real</strong>.
+            O novato, o trabalhador e o empresário não aguentam mais promessas vazias.
+            Chega de discurso — queremos resultado.
           </p>
 
           <div class="reveal d-3 mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -428,19 +427,17 @@
             </figcaption>
           </figure>
 
-          <!-- Foto Pedro (placeholder — sem foto por enquanto) -->
+          <!-- Foto Pedro -->
           <figure class="reveal d-2 group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-ink-700 to-ink-950">
-            <div class="flex aspect-[4/5] w-full flex-col items-center justify-center gap-4 p-8 text-center">
-              <span class="grid h-20 w-20 place-items-center rounded-full border border-brand/30 bg-brand/10">
-                <svg class="h-10 w-10 text-brand/70" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
-                </svg>
-              </span>
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center">
+              <svg class="h-12 w-12 text-brand/40" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
+              </svg>
               <p class="font-display text-base tracking-wide text-brand/70">FOTO — PEDRO</p>
-              <p class="max-w-[16rem] text-[11px] leading-relaxed text-white/35">
-                Foto do Secretário de Segurança em breve
-              </p>
             </div>
+            <img src="foto_pedro.png" alt="Pedro, Secretário de Segurança Pública" loading="lazy"
+                 class="relative z-10 aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                 onerror="this.remove()" />
             <figcaption class="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-ink-950 via-ink-950/80 to-transparent p-6 pt-16">
               <p class="font-display text-2xl tracking-wide text-white">PEDRO</p>
               <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.24em] text-brand">Secretário de Segurança Pública</p>
@@ -477,13 +474,13 @@
               <h3 class="font-display text-xl tracking-wide text-white sm:text-2xl">PEDRO</h3>
             </div>
             <p class="mt-5 text-sm leading-relaxed text-white/65 sm:text-base">
-              Pedro é o nome da firmeza. Assumiu a Segurança Pública com uma regra simples:
+              Pedro é o nome da firmeza. Assume a Segurança Pública com uma regra simples:
               quem trabalha tem que andar tranquilo. Nada de gabinete fechado — ele estará
-              <strong class="font-semibold text-white">presente nas ruas</strong>, acompanhando operações e cobrando resultado das equipes.
+              <strong class="font-semibold text-white">na linha da frente</strong>, coordenando o Tático nas ruas e cobrando resultado das equipes.
             </p>
             <p class="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
-              Sob seu comando: equipamento de ponta, bonificação por apreensão de armas ilegais,
-              cerco inteligente por câmeras e tolerância zero com o crime organizado.
+              Sob seu comando: patrulhamento massivo, tolerância zero com o crime predatório e
+              <strong class="font-semibold text-white">bônus de combate</strong> para o policial que retira armas ilegais de circulação.
             </p>
           </article>
 
@@ -518,21 +515,21 @@
               <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand/10 text-2xl ring-1 ring-brand/25 transition group-hover:bg-brand/20">💵</span>
               <span class="font-display text-4xl leading-none text-white/10 transition group-hover:text-brand/25">01</span>
             </div>
-            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">ECONOMIA &amp; BOLSO</h3>
-            <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Dinheiro no bolso de quem trabalha</p>
+            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">CHOQUE ECONÔMICO</h3>
+            <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Mais dinheiro no seu bolso, desde o primeiro dia</p>
 
             <ul class="mt-6 space-y-3.5 text-sm leading-relaxed text-white/70 sm:text-base">
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Aumento real do Dinheiro Inicial</strong> — criação e reforço do Fundo de Acolhimento ao novo morador.</span>
+                <span><strong class="font-semibold text-white">Fundo de Arranque do Cidadão</strong> — multiplicação imediata do valor inicial. Ninguém será empurrado para o crime por falta de dinheiro para o básico (celular, comida e roupa).</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Reajuste imediato da Renda Básica</strong> — Auxílio/Bolsa Família com valor corrigido desde o primeiro dia.</span>
+                <span><strong class="font-semibold text-white">Reajuste do Auxílio Cidadão</strong> — o custo de vida subiu. Vamos enxugar os gastos do governo e aumentar o seu auxílio diário. Mais dinheiro direto na sua conta.</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Desburocratização de alvarás</strong> — abrir e manter um comércio sem fila, sem taxa abusiva e sem enrolação.</span>
+                <span><strong class="font-semibold text-white">Apoio ao Empreendedor</strong> — isenção de taxas estaduais nos primeiros meses para empresas que contratarem moradores recém-chegados.</span>
               </li>
             </ul>
           </article>
@@ -543,25 +540,21 @@
               <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand/15 text-2xl ring-1 ring-brand/35 transition group-hover:bg-brand/25">🛡️</span>
               <span class="font-display text-4xl leading-none text-brand/25">02</span>
             </div>
-            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">SEGURANÇA PÚBLICA &amp; ORDEM</h3>
+            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">SEGURANÇA COM PULSO FIRME</h3>
             <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Comando de Pedro, presença de rua</p>
 
             <ul class="mt-6 space-y-3.5 text-sm leading-relaxed text-white/70 sm:text-base">
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Equipamento de ponta</strong> — armamento, viaturas e proteção individual de nível profissional.</span>
+                <span><strong class="font-semibold text-white">Secretário na Linha da Frente</strong> — Pedro coordenará o Tático nas ruas. Patrulhamento massivo e tolerância zero com o crime predatório.</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Bônus por apreensão de armas ilegais</strong> — reconhecimento financeiro por produtividade real.</span>
+                <span><strong class="font-semibold text-white">Bônus de Combate</strong> — gratificações pesadas por apreensão de armas ilegais. Policial valorizado é o terror da criminalidade.</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Cerco inteligente por câmeras</strong> — monitoramento integrado nas entradas e pontos críticos da cidade.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Presença ativa do Secretário Pedro</strong> — gestão de rua, não de gabinete.</span>
+                <span><strong class="font-semibold text-white">Muralha Digital</strong> — câmeras inteligentes nas principais saídas da cidade para interceptação imediata de sequestros.</span>
               </li>
             </ul>
           </article>
@@ -572,21 +565,17 @@
               <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand/10 text-2xl ring-1 ring-brand/25 transition group-hover:bg-brand/20">🏥</span>
               <span class="font-display text-4xl leading-none text-white/10 transition group-hover:text-brand/25">03</span>
             </div>
-            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">SAÚDE &amp; PRONTIDÃO (EMS)</h3>
+            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">SAÚDE ÁGIL E EFICIENTE</h3>
             <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Salvar vidas com resposta rápida</p>
 
             <ul class="mt-6 space-y-3.5 text-sm leading-relaxed text-white/70 sm:text-base">
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Plano de carreira por produtividade</strong> — socorrista que atende mais e melhor, evolui mais rápido.</span>
+                <span><strong class="font-semibold text-white">Meritocracia no EMS</strong> — aumento do repasse orçamentário. Médicos e socorristas que responderem aos chamados de forma rápida e eficiente terão bônus de produtividade.</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Kits de emergência acessíveis</strong> — insumos disponíveis para a população e para as equipes.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Redução no tempo de resposta</strong> — meta clara de atendimento a cada chamado.</span>
+                <span><strong class="font-semibold text-white">Saúde Preventiva</strong> — distribuição gratuita de kits de primeiros socorros nas praças públicas.</span>
               </li>
             </ul>
           </article>
@@ -597,21 +586,17 @@
               <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand/10 text-2xl ring-1 ring-brand/25 transition group-hover:bg-brand/20">🏎️</span>
               <span class="font-display text-4xl leading-none text-white/10 transition group-hover:text-brand/25">04</span>
             </div>
-            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">CIDADE ATIVA &amp; LAZER</h3>
-            <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Vida na cidade, não só movimento</p>
+            <h3 class="mt-6 font-display text-2xl tracking-wide text-white sm:text-[1.75rem]">UMA CIDADE VIVA E RENTÁVEL</h3>
+            <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-brand">Vida na cidade, economia girando</p>
 
             <ul class="mt-6 space-y-3.5 text-sm leading-relaxed text-white/70 sm:text-base">
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Incentivo a eventos públicos</strong> — apoio oficial a encontros, feiras e ações da comunidade.</span>
+                <span><strong class="font-semibold text-white">Circuito Estadual de Eventos</strong> — patrocínio do Estado para corridas legalizadas, torneios de luta e grandes festas, com prêmios altos para movimentar a economia.</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Corridas legalizadas e competições</strong> — estrutura, segurança e regulamento para o automobilismo da cidade.</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span>
-                <span><strong class="font-semibold text-white">Reforma de asfalto e iluminação</strong> — ruas trafegáveis, postes funcionando e cidade visível à noite.</span>
+                <span><strong class="font-semibold text-white">Zeladoria de Excelência</strong> — substituição da iluminação pública nas periferias para afastar o crime e reparo constante do asfalto.</span>
               </li>
             </ul>
           </article>
@@ -637,8 +622,8 @@
             </h2>
             <p class="mt-6 text-base leading-relaxed text-white/70 sm:text-lg">
               Com <strong class="font-semibold text-white">Pedro</strong> na Secretaria de Segurança Pública,
-              a política de segurança deixa de ser estatística e passa a ser presença. Meta clara,
-              equipe valorizada e resposta rápida contra o crime organizado.
+              a política de segurança deixa de ser estatística e passa a ser presença. Coordenação direta do Tático,
+              patrulhamento massivo e tolerância zero com o crime predatório.
             </p>
 
             <blockquote class="mt-8 border-l-4 border-brand bg-white/5 py-4 pl-5 pr-4 text-base font-semibold italic leading-relaxed text-white sm:text-lg">
@@ -651,27 +636,27 @@
           <div class="grid gap-4 sm:grid-cols-2">
 
             <div class="card-hover reveal d-1 rounded-2xl border border-white/10 bg-ink-900/70 p-6">
-              <p class="font-display text-3xl text-brand">+1</p>
-              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Equipamento de ponta</p>
-              <p class="mt-2 text-sm leading-relaxed text-white/55">Investimento direto em armamento, viaturas e proteção.</p>
+              <p class="font-display text-3xl text-brand">RUA</p>
+              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Secretário na linha de frente</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/55">Coordenação direta do Tático nas ruas, gestão de presença.</p>
             </div>
 
             <div class="card-hover reveal d-2 rounded-2xl border border-white/10 bg-ink-900/70 p-6">
               <p class="font-display text-3xl text-brand">$</p>
-              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Bônus por apreensão</p>
-              <p class="mt-2 text-sm leading-relaxed text-white/55">Gratificação real por arma ilegal retirada de circulação.</p>
+              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Bônus de combate</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/55">Gratificações pesadas por apreensão de armas ilegais.</p>
             </div>
 
             <div class="card-hover reveal d-3 rounded-2xl border border-white/10 bg-ink-900/70 p-6">
               <p class="font-display text-3xl text-brand">24h</p>
-              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Cerco por câmeras</p>
-              <p class="mt-2 text-sm leading-relaxed text-white/55">Monitoramento inteligente nas entradas e pontos críticos.</p>
+              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Muralha Digital</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/55">Câmeras inteligentes nas saídas da cidade contra sequestros.</p>
             </div>
 
             <div class="card-hover reveal d-4 rounded-2xl border border-brand/30 bg-brand/10 p-6">
-              <p class="font-display text-3xl text-brand">RUA</p>
-              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Gestão presente</p>
-              <p class="mt-2 text-sm leading-relaxed text-white/60">O Secretário Pedro acompanhando operações de perto.</p>
+              <p class="font-display text-3xl text-brand">0%</p>
+              <p class="mt-2 text-sm font-bold uppercase tracking-wider text-white">Tolerância zero</p>
+              <p class="mt-2 text-sm leading-relaxed text-white/60">Patrulhamento massivo contra o crime predatório.</p>
             </div>
 
           </div>
@@ -699,7 +684,7 @@
 
         <div class="mt-12 grid gap-6 md:grid-cols-3">
 
-          <!-- Notícia 1 — usa a 3ª foto (foto_igor_favela) -->
+          <!-- Notícia 1 -->
           <article class="card-hover reveal d-1 group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800/80">
             <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-ink-700 to-ink-950">
               <img src="foto_igor_favela.png" alt="Igor Corrêa em visita à comunidade" loading="lazy"
@@ -709,9 +694,9 @@
             </div>
             <div class="flex flex-1 flex-col p-6">
               <time class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40">Campanha 2026</time>
-              <h3 class="mt-3 font-display text-xl leading-snug tracking-wide text-white">DINHEIRO INICIAL MAIS ALTO PARA O NOVO MORADOR</h3>
+              <h3 class="mt-3 font-display text-xl leading-snug tracking-wide text-white">FUNDO DE ARRANQUE DO CIDADÃO VAI MULTIPLICAR VALOR INICIAL</h3>
               <p class="mt-3 flex-1 text-sm leading-relaxed text-white/60">
-                O Fundo de Acolhimento garante que quem chega à cidade comece com estrutura para trabalhar e crescer.
+                Ninguém será empurrado para o crime por falta de dinheiro para o básico. Multiplicação imediata do valor inicial do novo morador.
               </p>
               <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand">
                 Ler mais
@@ -720,7 +705,7 @@
             </div>
           </article>
 
-          <!-- Notícia 2 — placeholder -->
+          <!-- Notícia 2 -->
           <article class="card-hover reveal d-2 group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800/80">
             <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-ink-700 to-ink-950">
               <img src="INSIRA_AQUI_IMAGEM_NOTICIA_2.png" alt="Notícia 2" loading="lazy"
@@ -730,9 +715,9 @@
             </div>
             <div class="flex flex-1 flex-col p-6">
               <time class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40">Campanha 2026</time>
-              <h3 class="mt-3 font-display text-xl leading-snug tracking-wide text-white">PEDRO ANUNCIA CERCO INTELIGENTE POR CÂMERAS</h3>
+              <h3 class="mt-3 font-display text-xl leading-snug tracking-wide text-white">MURALHA DIGITAL: CÂMERAS NAS SAÍDAS DA CIDADE</h3>
               <p class="mt-3 flex-1 text-sm leading-relaxed text-white/60">
-                Novo sistema cobre entradas da cidade e pontos críticos, com resposta imediata das equipes.
+                Sistema inteligente promete interceptação imediata em casos de sequestro. Coordenação direta do Secretário Pedro.
               </p>
               <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand">
                 Ler mais
@@ -741,7 +726,7 @@
             </div>
           </article>
 
-          <!-- Notícia 3 — placeholder -->
+          <!-- Notícia 3 -->
           <article class="card-hover reveal d-3 group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-800/80">
             <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-ink-700 to-ink-950">
               <img src="INSIRA_AQUI_IMAGEM_NOTICIA_3.png" alt="Notícia 3" loading="lazy"
@@ -751,9 +736,9 @@
             </div>
             <div class="flex flex-1 flex-col p-6">
               <time class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40">Campanha 2026</time>
-              <h3 class="mt-3 font-display text-xl leading-snug tracking-wide text-white">CORRIDAS LEGALIZADAS E REFORMA NO ASFALTO</h3>
+              <h3 class="mt-3 font-display text-xl leading-snug tracking-wide text-white">CIRCUITO ESTADUAL DE EVENTOS E ZELADORIA DE EXCELÊNCIA</h3>
               <p class="mt-3 flex-1 text-sm leading-relaxed text-white/60">
-                Plano prevê pistas regulamentadas, eventos oficiais e recuperação da iluminação pública.
+                Patrocínio para corridas legalizadas, torneios e festas, além de nova iluminação nas periferias.
               </p>
               <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand">
                 Ler mais
@@ -780,7 +765,7 @@
           <div class="reveal text-ink-900">
             <p class="text-[10px] font-bold uppercase tracking-[0.32em] text-ink-900/60 sm:text-xs">Faça Parte</p>
             <h2 class="mt-4 font-display text-4xl leading-[0.95] tracking-tight sm:text-6xl">
-              A MUDANÇA<br />PRECISA DE VOCÊ.
+              A ESCOLHA É SUA.<br />O RESULTADO É NOSSO.
             </h2>
             <p class="mt-6 max-w-lg text-base font-medium leading-relaxed text-ink-900/80 sm:text-lg">
               Entre para a equipe de campanha, ajude a divulgar nas comunidades e no Discord.
@@ -892,7 +877,6 @@
           <h3 class="text-[11px] font-bold uppercase tracking-[0.24em] text-brand">Comunidade</h3>
 
           <div class="mt-5 flex flex-wrap gap-3">
-            <!-- Discord -->
             <a href="#" aria-label="Discord da campanha"
                class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-brand/60 hover:bg-brand/10 hover:text-brand">
               <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -900,7 +884,6 @@
               </svg>
             </a>
 
-            <!-- X / Twitter -->
             <a href="#" aria-label="X (Twitter) da campanha"
                class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-brand/60 hover:bg-brand/10 hover:text-brand">
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -908,7 +891,6 @@
               </svg>
             </a>
 
-            <!-- Instagram -->
             <a href="#" aria-label="Instagram da campanha"
                class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-brand/60 hover:bg-brand/10 hover:text-brand">
               <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -916,7 +898,6 @@
               </svg>
             </a>
 
-            <!-- TikTok -->
             <a href="#" aria-label="TikTok da campanha"
                class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition hover:border-brand/60 hover:bg-brand/10 hover:text-brand">
               <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -1095,7 +1076,7 @@
       }
 
       /* 6) BAIXAR MATERIAL */
-      const MATERIAL_URL = ''; // Ex.: 'material-de-campanha.pdf'
+      const MATERIAL_URL = 'material-de-campanha.pdf';
 
       document.querySelectorAll('[data-download]').forEach(function (btn) {
         btn.addEventListener('click', function () {
